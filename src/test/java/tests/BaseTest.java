@@ -9,6 +9,8 @@ import org.testng.annotations.BeforeMethod;
 public class BaseTest {
 
     public WebDriver driver;
+    PropertyManager props;
+
     @BeforeMethod
     public void setUp(){
         System.setProperty("webdriver.chrome.driver", "src/test/resources/webdrivers/chromedriver.exe");
@@ -20,5 +22,10 @@ public class BaseTest {
     @AfterMethod
     public void close(){
         driver.quit();
+    }
+
+    @BeforeMethod
+    public void loadProperties(){
+        props = new PropertyManager();
     }
 }
