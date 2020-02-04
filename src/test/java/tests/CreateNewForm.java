@@ -12,7 +12,7 @@ public class CreateNewForm extends BaseTest {
     @Test
     public void LogIn(){
 
-        User validUser = new User("aqa1@mailinator.com", "password04"/*System.getProperty("password")*/);
+        User validUser = new User("aqa1@mailinator.com", System.getProperty("password"));
 
         new LogInPage(driver)
                 .openPage()
